@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test JS</title>
+   
+</head>
+<body>
+    <table>
+        <tr>
+            <td>X:</td>
+            <td>
+                <input type="text" id="txtXData">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Y:</td>
+            <td>
+                <input type="text" id="txtYData">
+            </td>
+        </tr>
+        <tr>
+            <td>Sum:</td>
+            <td>
+                <input type="text" id="txtResult" >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" id="btnAdd" value="Add" onclick="Add()">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="button" id="btnClear" value="Reset" onclick="Clear()">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="errorDiv" style="color:red">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function Clear(){
+            var txtBox1 = document.getElementById("txtXData");
+            var txtBox2 = document.getElementById("txtYData");
+            var resultBox = document.getElementById("txtResult");
+            var divToShowError = document.getElementById("errorDiv");
+            txtBox1.value = "";
+            txtBox2.value = "";
+            resultBox.value = "";
+            divToShowError.innerHTML = "";
+        }
+      
+        function Add(){
+            var txtBox1 = document.getElementById("txtXData");
+            var txtBox2 = document.getElementById("txtYData");
+            var resultBox = document.getElementById("txtResult");
+            var divToShowError = document.getElementById("errorDiv");
+
+            divToShowError.innerHTML = "";
+
+            if(txtBox1.value!="" && txtBox2.value!="" )
+            {
+                if(isNaN(txtBox1.value))//Check if value is number or not!
+                {
+                    divToShowError.innerHTML = "X is not a number!"
+                }
+                else
+                {
+                    var x = parseInt(txtBox1.value);
+                    var y = parseInt(txtBox2.value);
+                    var result = x+y;
+                    resultBox.value = result;
+                }
+            }
+            else
+            {
+                divToShowError.innerHTML = "<h6> Please ensure X, Y values are entered!</h6>";
+            }
+            
+          
+        }
+    </script>
+</body>
+</html>

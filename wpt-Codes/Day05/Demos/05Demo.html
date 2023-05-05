@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowAd</title>
+
+</head>
+<body>
+    <img style="height:100px; width:100%" src="ad1.jpg" id="ad" >
+
+    <script>
+        var adSource = "ad1.jpg";
+
+        function ChangeAd()
+        {
+            if(adSource =="ad1.jpg")
+            {
+                adSource = "ad2.jpg"
+            }
+            else
+            {
+                adSource ="ad1.jpg"
+            }
+
+            var ad = document.getElementById("ad");
+            ad.src = adSource;
+        }
+
+        window.setInterval(ChangeAd, 1000);
+        
+    </script>
+</body>
+</html>

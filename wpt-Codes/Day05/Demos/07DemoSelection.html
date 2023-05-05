@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+  
+</head>
+<body>
+    
+    <input type="text"  id="txtName" value="Mahesh"><br>
+    <input type="text"  id="txtAge" value="40"><br>
+
+    <input type="button" value="Change" onclick="DoChange()">
+    
+    <div>I am div</div>
+   
+   <script>
+        function DoChange(){
+            //First Level of filter
+            var arrayOfinputs =  document.getElementsByTagName("input");
+
+            var arrayOfInputsWithTypeText = [];
+
+             //Second Level of filter
+            for(i = 0 ; i< arrayOfinputs.length; i++)
+            {
+                if(arrayOfinputs[i].type == "text")
+                {
+                    arrayOfInputsWithTypeText.push(arrayOfinputs[i]);
+                }
+            }
+
+            //use filtered elements
+            for(i = 0 ; i< arrayOfInputsWithTypeText.length; i++)
+            {
+                arrayOfInputsWithTypeText[i].style.backgroundColor = "blue";
+            }
+
+        }
+    </script>
+</body>
+</html>

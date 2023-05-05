@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test </title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        
+            $("#btn").click(function(){
+              var no = $('#txtNo').val();
+              var name = $('#txtName').val();
+              var address = $('#txtAddress').val();
+            //   var row = "<tr><td>1</td><td>sachin</td><td>mumbai</td></tr>";
+              var row = "<tr><td>" +  no +"</td><td>" + name +"</td><td>" + address + "</td></tr>";
+              $("#myTable").append(row);
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>No</td>
+            <td>
+                <input type="text" id="txtNo">
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" id="txtName">
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>
+                <input type="text" id="txtAddress">
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="Add New Record" id="btn">
+
+    <table style="width: 100%;" border="1" id="myTable">
+        
+    </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.header {
+  padding: 20px;
+  background-color: cornflowerblue;
+}
+
+.header h1,
+.header h4 {
+  color: white;
+  text-align: center;
+}
+
+.counter {
+  background-color: cornsilk;
+  padding: 20px;
+}
+
+.btn-success {
+  margin: 10px !important;
+}

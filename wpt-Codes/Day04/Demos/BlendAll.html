@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test JS HTML Talk</title>
+    
+</head>
+<body>
+    <input type="text" id="myName" value="Mahesh">
+    <input type="button" value="Click Me" onclick="MyFunction()">
+    <script>
+
+      function MyFunction()
+      {
+        //Code Here in JS would like to access input control 
+        //with id = myName
+        debugger;
+        var someElement_Object_Ref_FromDOM = 
+         document.getElementById("myName");
+
+        //console.log("Hello " + someElement_Object_Ref_FromDOM.value);
+        someElement_Object_Ref_FromDOM.value = "Nilesh";
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <style>
+        .errorDiv
+        {
+            color:red
+        }
+
+        table
+        {
+            width:400px;
+            border: 1px solid blue 
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td> 
+                <input type="text" id="txtName" >
+            </td>
+            <td>
+                <div id="errordivForName" class="errorDiv"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Age:</td>
+            <td> 
+                <input type="text" id="txtAge">
+            </td>
+            <td>
+                <div id="errordivForAge" class="errorDiv"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3"> 
+                <input type="button" id="btnRegister" value="Register" 
+                    onclick="Register()"
+                    onmouseover="ChangeAppearanceOfButtonControl()"
+                    onmouseout="ResetAppearanceOfButtonControl()">
+            </td>
+        </tr>
+    </table>
+    <!-- <script src="http://sunbeaminfo.com/validations.js"></script> -->
+
+    <!-- <script src="validations.js"></script> -->
+    <!-- <script src="validations.min.js"></script> -->
+    <script src="validations_auto.min.js"></script>
+    <script>
+
+        function ChangeAppearanceOfButtonControl()
+        {
+            var btnRegister = document.getElementById("btnRegister");
+            btnRegister.style.backgroundColor = "burlywood";
+        }
+
+        function ResetAppearanceOfButtonControl()
+        {
+            var btnRegister = document.getElementById("btnRegister");
+            btnRegister.style.backgroundColor = "white";
+        }
+        function Register()
+        {
+          
+           if(ValidateEmpty("txtName","errordivForName","Name can not be empty!"))
+           {
+             var txtName = document.getElementById("txtName");
+             console.log("Welcome " + txtName.value);
+           }
+
+           if(ValidateEmpty("txtAge","errordivForAge","Age can not be empty!"))
+           {
+             var txtAge = document.getElementById("txtAge");
+             console.log("Age is " + txtAge.value);
+           }
+          
+        }
+    </script>
+</body>
+</html>

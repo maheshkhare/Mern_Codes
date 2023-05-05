@@ -1,0 +1,36 @@
+.title {
+  padding: 10px;
+  text-align: center;
+  height: 90px;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.add-note {
+  padding: 10px;
+  background-color: lightgoldenrodyellow;
+}
+
+.add-note textarea {
+  resize: none;
+}
+
+.notes-list {
+  padding: 10px;
+  padding-top: 20px;
+  background-color: linen;
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 5px;
+}
+
+.button-delete {
+  cursor: pointer;
+}
+
+.btn-warning {
+  margin: 5px !important;
+}

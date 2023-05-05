@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body onload="loadProducts()">
+  <div class="container">
+    <h1>Products</h1>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+
+    <script src="js/jquery.js"></script>
+    <script>
+
+      function loadProducts() {
+
+        $.ajax({
+          method: 'GET',
+          url: 'http://localhost:4000/product',
+          error: (error) => {
+            console.log(error)
+          },
+          success: (response) => {
+            if (response['status'] == 'success') {
+              const products = response['data']
+              let tbody = ``
+              for (let index = 0; index < products.length; index++) {
+                // console.log(product)
+                const product = products[index]
+
+                tbody += `<tr>`
+                  tbody += `<td>${index + 1}</td>`
+                  tbody += `<td>${product['productTitle']}</td>`
+                  tbody += `<td>${product['productDescription']}</td>`
+                  tbody += `<td>${product['categoryTitle']}</td>`
+                  tbody += `<td>${product['price']}</td>`
+                  tbody += `<td>
+                  </td>`
+                tbody += `</tr>`
+
+              }
+
+              $('#tbody').html(tbody)
+            }
+          }
+        })
+
+      }
+
+    </script>
+  </div>
+</body>
+</html>

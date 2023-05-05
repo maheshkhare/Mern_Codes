@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test JS</title>
+    <script>
+        function Change(){
+           var myDiv =  document.getElementById("myDiv");
+           myDiv.style.backgroundColor = "yellow";
+        }
+        function Reset(){
+           var myDiv =  document.getElementById("myDiv");
+           myDiv.style.backgroundColor = "red";
+        }
+    </script>
+</head>
+<body>
+    <div id="myDiv" 
+         style="height:300px; width:300px; background-color: red;"
+         onmouseover="Change()" 
+         onmouseout="Reset()">
+
+    </div>
+</body>
+</html>

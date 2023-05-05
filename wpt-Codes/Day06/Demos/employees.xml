@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <emp>
+        <no>1</no>
+        <name>mahesh</name>
+        <city>pune</city>
+    </emp>
+    <emp>
+        <no>2</no>
+        <name>nilesh</name>
+        <city>chennai</city>
+    </emp>
+</employees>

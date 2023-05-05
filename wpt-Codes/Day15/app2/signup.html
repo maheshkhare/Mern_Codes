@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Singup</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      h1 {
+        text-align: center;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Signup</h1>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="form">
+            <div class="mb-3">
+              <label for="">First Name</label>
+              <input id="first-name" type="text" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="">Last Name</label>
+              <input id="last-name" type="text" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="">Email</label>
+              <input id="email" type="text" class="form-control" />
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="">Password</label>
+                  <input id="password" type="password" class="form-control" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="">Confirm Password</label>
+                  <input
+                    id="confirm-password"
+                    type="password"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <button onclick="signUp()" class="btn btn-success">Signup</button>
+              <a class="btn btn-warning float-end" href="signin.html">Signin</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+      const url = 'http://localhost:3000'
+
+      function signUp() {
+        const firstName = $('#first-name').val()
+        const lastName = $('#last-name').val()
+        const email = $('#email').val()
+        const password = $('#password').val()
+        const confirmPassword = $('#confirm-password').val()
+
+        if (firstName.length == 0) {
+          alert('enter first name')
+        } else if (lastName.length == 0) {
+          alert('enter last name')
+        } else if (email.length == 0) {
+          alert('enter email')
+        } else if (password.length == 0) {
+          alert('enter password')
+        } else if (confirmPassword.length == 0) {
+          alert('enter confirm password')
+        } else if (password != confirmPassword) {
+          alert('password does not match')
+        } else {
+          // make signup API call
+          $.ajax({
+            url: url + '/user/signup',
+            method: 'POST',
+            data: {
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              password: password,
+            },
+            success: (response) => {
+              console.log(response)
+            },
+            error: (response) => {
+              console.log(response)
+            },
+          })
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jQuery</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+     $(document).ready(function (){
+        $("#btn").click(function (){
+            ////Find divs by ID and change color
+            // $("#myDiv1").css("background-color","blue");
+            // $("#myDiv2").css("background-color","blue");
+            // $("#myDiv3").css("background-color","blue");
+            // $("#myDiv4").css("background-color","blue");
+
+             ////Find divs by TAGName and change color
+            //  $("div").css("background-color","blue");
+
+            ////Find those elements which have AStyle class applied and change the color
+            // $(".AStyle").css("background-color","blue");
+
+            ////Find only Div elements with .AStyle applied and change color
+            //$("div.AStyle").css("background-color","blue");
+
+            ////Find only Div elements with title='mumbai' and change color
+            //$("div[title='mumbai']").css("background-color","blue");
+
+            ////Find only Div elements with title ending with "i" and change color
+            // $("div[title$='i']").css("background-color","blue");
+
+            ////Find only Div elements with title starting with "p" and change color
+            // $("div[title^='p']").css("background-color","blue");
+
+            ////Find only Div elements with title containing "n" anywhere and change color
+            //$("div[title*='n']").css("background-color","blue");
+
+
+            // $("div").css("background-color","blue");
+            // $("div").css("height","50px");
+            // $("div").css("width","50px");
+
+            //$("div").css("background-color","blue").css("height","50px").css("width","50px");
+
+            // $("div").css({
+            //                 "background-color":"blue",
+            //                 "height":"50px",
+            //                 "width":"50px"
+            //              });
+
+            // $("div[title*='a']").filter("div[title*='u']").css({
+            //                                                         "background-color":"blue",
+            //                                                         "height":"50px",
+            //                                                         "width":"50px"
+            //                                                     });
+
+        });});
+    </script>
+    <style>
+        .AStyle
+        {
+            height:100px; 
+            width:100px;
+            background-color: yellow;
+        }
+        .BStyle{
+            height:100px; width:100px;background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="AStyle">
+        This is some paragraph ... text all over here...
+    </p>
+    <br>
+    <div id="myDiv1" class="AStyle" title="nagpur">
+        DIV 1
+    </div><br>
+    <div id="myDiv2" class="BStyle" title="pune">
+        DIV 2
+    </div><br>
+    <div id="myDiv3" class="AStyle" title="mumbai">
+        DIV 3
+    </div><br>
+    <div id="myDiv4" class="BStyle" title="panji">
+        DIV 4
+    </div><br>
+    <input type="button" value="Click Me" id="btn">
+</body>
+</html>

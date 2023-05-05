@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="no1" placeholder="no 1">
+  <input type="text" id="no2" placeholder="no 2">
+  <button onclick="add()" id="add">Add</button>
+  <div id="result"></div>
+
+  <script>
+
+    function add() {
+      const no1 = parseInt(document.getElementById('no1').value)
+      const no2 = parseInt(document.getElementById('no2').value)
+      const addition = no1 + no2
+      document.getElementById('result').innerHTML = addition
+    }
+
+  </script>
+</body>
+</html>

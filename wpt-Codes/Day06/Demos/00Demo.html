@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test jQuery</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+       debugger;
+       jQuery(document).ready(CallThisCode);
+
+       function CallThisCode()
+       {
+        debugger;
+        var myTextBox = document.getElementById("myTextBox");
+        console.log("Hello " +  myTextBox.value);
+       }
+
+
+      
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="myTextBox" value="Mahesh">
+    
+</body>
+</html>

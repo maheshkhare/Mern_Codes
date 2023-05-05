@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .AStyle{
+            height:100px;width:100px;background-color: yellow;
+        }
+        .BStyle{
+            height:100px;width:100px;background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="AStyle"></div><br>
+    <div id="div2" class="BStyle"></div><br>
+    <div id="div3" class="AStyle"></div><br>
+    <div id="div4" class="BStyle"></div><br>
+    <input type="button" value="Change" onclick="DoChange()">
+    <script>
+        function DoChange(){
+            //----------------------------------------------------------------
+            //Find By ID & Change the color
+            // var div1 = document.getElementById("div1");
+            // div1.style.backgroundColor = "blue";
+
+            //----------------------------------------------------------------
+            //Find By TagName & Change the color
+            // var arrayOfDivs =  document.getElementsByTagName("div");
+            // for(i = 0 ; i< arrayOfDivs.length; i++)
+            // {
+            //     arrayOfDivs[i].style.backgroundColor = "blue";
+            // }
+
+            //----------------------------------------------------------------
+            //Find By ClassName & Change the color
+            // var arrayOfElements =  document.getElementsByClassName("AStyle");
+            // for(i = 0 ; i< arrayOfElements.length; i++)
+            // {
+            //     arrayOfElements[i].style.backgroundColor = "blue";
+            // }
+
+        }
+    </script>
+</body>
+</html>

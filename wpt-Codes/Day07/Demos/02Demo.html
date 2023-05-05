@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                alert("Do validation And submission here")
+            });
+            $("#btnClear").click(function(){
+                Clear();
+            }); 
+
+            function Clear()
+            {
+                $("#txtName").val("");
+                $("#txtAge").val("");
+            }
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <input type="text" name="name" id="txtName">
+    <input type="text" name="age" id="txtAge">
+    <input type="button" value="Submit" id="btn">
+    <input type="button" value="Clear Me" id="btnClear">
+
+</body>
+</html>

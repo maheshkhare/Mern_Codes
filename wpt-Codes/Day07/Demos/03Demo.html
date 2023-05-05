@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+
+                url: "http://127.0.0.1:5500/allcountry.json",
+                success: function(allcountryData){
+                   //debugger;
+                    for(i=0;i<allcountryData.length; i++)
+                    {
+                        var countryCode =  allcountryData[i].code;
+                        var countryName=   allcountryData[i].name;
+                        
+                        var optionTag = 
+                                `<option value="${countryCode}">${countryName}</option>`;
+
+                        //debugger;
+                        $("#countryBox").append(optionTag);
+                    }
+                },
+                error:function(errdetails){
+                    //debugger;
+                    alert("Something went wrong!");
+                }
+            });
+
+            $("#countryBox").change(function(){
+                if($(this).val()!="-1")
+                {
+                    alert("Country changed to " +$(this).val() );
+                    if($(this).val()=="91")
+                    {
+                        var urlToCall = "/91.json";  //SomeJSSPPage.jsp?countryCode=91
+                        $.ajax({
+                            url: urlToCall,
+                            success: function(statesDatabasedOnCountry){
+                               // debugger;
+                                for(i=0;i<statesDatabasedOnCountry.length; i++)
+                                        {
+                                            var sCode =  statesDatabasedOnCountry[i].scode;
+                                            var sName=   statesDatabasedOnCountry[i].sname;
+                                            
+                                            var optionTag = 
+                                                    `<option value="${sCode}">${sName}</option>`;
+
+                                            //debugger;
+                                            $("#stateBox").append(optionTag);
+                                        }
+                            },
+                            error:function(errdetails){
+                                    //debugger;
+                                    alert("Something went wrong!");
+                                }
+                        });
+                    }
+
+                }
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+    Country:
+    <br>
+    <select name="country" id="countryBox">
+        <option value="-1">Select your country</option>
+    </select>
+    <br>
+    State:
+    <br>
+    <select name="state" id="stateBox">
+        <option value="-1">Select your State</option>
+    </select>
+</body>
+</html>

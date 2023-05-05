@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Window Object</title>
+    <script>
+        function ShowDialog()
+        {
+            window.alert("hi from code");
+        }
+
+        var counter = 0;
+        var refToCounterQueue = null;
+
+        function KeepCounting()
+        {
+            counter = counter + 1;
+        }
+        
+        function ShowCount()
+        {
+            var counterDisplay = document.getElementById("counterDisplay");
+            counterDisplay.innerHTML = counter;
+        }
+        function CountAndDisplay()
+        {
+            KeepCounting();
+            ShowCount();
+        }
+
+        function Start()
+        {
+           refToCounterQueue =  window.setInterval(CountAndDisplay, 1000);
+        }
+
+        function Stop()
+        {
+            window.clearInterval(refToCounterQueue);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Click Me" onclick="ShowDialog()">
+
+    <div id="counterDisplay" style="height: 50px;width:100px; background-color:yellow;">
+
+    </div>
+    <input type="button" value="Start Counting" onclick="Start()">
+    <input type="button" value="Stop Counting" onclick="Stop()">
+
+</body>
+</html>
